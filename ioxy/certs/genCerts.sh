@@ -7,14 +7,14 @@ mkdir -p "./ca"
 mkdir -p "./devices/$DEVICE_NAME"
 mkdir -p "./verificationCert"
 
-# generate root key 
+# generate root key
 echo "=============------------============"
 echo "[+] Generating Root cert"
 echo "=============------------============"
 echo ""
 cd "./ca"
 openssl genrsa -out rootCA.key 2048 && openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 1024 -out rootCA.pem
-cd .. 
+cd ..
 
 # generate verification cert
 echo ""

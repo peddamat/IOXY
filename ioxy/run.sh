@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ENDPOINT="xxx-ats.iot.us-west-2.amazonaws.com"
+ENDPOINT="a3v7nl5b2malks-ats.iot.us-west-2.amazonaws.com"
 THINGNAME="feathermitm"
 
 ./ioxy mqtts \
