@@ -1,4 +1,5 @@
 **/.DS_Store
-FDixioxy/database/mqtt.db
+ioxy/database/mqtt.db
 ioxy/file.log
 ioxy/ioxy
+ioxy/certs
