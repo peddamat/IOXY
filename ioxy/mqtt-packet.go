@@ -96,9 +96,9 @@ func (session *Session) ForwardMQTTPacket(way string, r net.Conn, w net.Conn) er
 			}
 		}
 		log.Printf("client %s broker | Publish | packet : SessionId : %s, Topic : %s , Payload : %s, Dup : %t, QoS : %d, Retain : %t", way, session.id, p.TopicName, string(p.Payload), p.Dup, int(p.Qos), p.Retain)
-		b, err := json.Marshal(WsNormal{Way: way, Topic: p.TopicName, Payload: p.Payload, Qos: p.Qos})
-		checkError(err)
-		wspipe <- b
+		// b, err := json.Marshal(WsNormal{Way: way, Topic: p.TopicName, Payload: p.Payload, Qos: p.Qos})
+		// checkError(err)
+		// wspipe <- b
 		addMessage(db, Messages{session.id, p.TopicName, string(p.Payload), p.Dup, int(p.Qos), p.Retain, time.Now().Format("2006-01-02 15:04:05")})
 	case *packets.SubscribePacket:
 		log.Printf("client %s broker | Subscribe | packet : SessionId : %s, Topic : %s, Dup : %t, QoS : %d, Retain : %t", way, session.id, strings.Join(p.Topics, ","), p.Dup, int(p.Qos), p.Retain)
