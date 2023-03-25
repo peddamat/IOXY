@@ -95,7 +95,7 @@ func addClient(db *sql.DB, client SessionMgmt) {
 	checkError(err)
 	_, err = res.RowsAffected()
 	checkError(err)
-	log.Println("New client added to the database")
+	log.Println("New client added to the database: ", client.client_id)
 }
 
 func addMessage(db *sql.DB, message Messages) {
